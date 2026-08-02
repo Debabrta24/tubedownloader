@@ -41,10 +41,11 @@ async function getInfo(url) {
 
     const cleanFormats = summarizeFormats(info.formats);
     console.log('Formats:', cleanFormats);
+    console.log('Duration:', info.duration / 60);
+    console.log("thumbnail", info.thumbnail)
 
     return cleanFormats;
 }
 
 
 // getInfo('https://www.facebook.com/share/v/1ES8rLmMPd/');
-getInfo('https://youtu.be/QnmCeP4x6L8?si=0qsaseUmwqUSG5CN');
