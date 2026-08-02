@@ -6,7 +6,7 @@ app.use(express.json())
 
 
 app.use(cors({
-    origin: "http://localhost:5173",//only allowed origin
+    origin: ["http://localhost:5173","https://atozdownloader.vercel.app/"],//only allowed origin
     methods: ['get']
 }))
 
