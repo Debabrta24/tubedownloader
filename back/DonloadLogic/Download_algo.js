@@ -28,14 +28,29 @@ function summarizeFormats(formats) {
 
 
 async function getInfo(url) {
-    const info = await youtubedl(url, {
-        dumpSingleJson: true,
-        noWarnings: true,
-        noCheckCertificates: true,
-        preferFreeFormats: true,
-        cookies: './cookies.txt',
-        format: 'best/bestvideo+bestaudio'
-    });
+    try {
+        const info = await youtubedl(url, {
+            dumpSingleJson: true,
+            noWarnings: true,
+            noCheckCertificates: true,
+            preferFreeFormats: true,
+            cookies: './cookies.txt'
+        });
+    }
+
+    catch (err) {
+        if (err.message.includes('This live event has ended')) {
+            throw new Error('This live stream has ended and is no longer available.');
+        }
+        if (err.message.includes('Sign in to confirm')) {
+            throw new Error('This video requires authentication and could not be accessed.');
+        }
+        throw new Error('Could not fetch video info. The video may be unavailable, private, or removed.');
+    }
+
+    // console.log('live_status:', info.live_status);
+    // console.log('is_live:', info.is_live);
+    // console.log('total formats found:', info.formats?.length);
 
 
     const cleanFormats = summarizeFormats(info.formats);
