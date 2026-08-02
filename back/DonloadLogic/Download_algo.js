@@ -33,7 +33,8 @@ async function getInfo(url) {
         noWarnings: true,
         noCheckCertificates: true,
         preferFreeFormats: true,
-        cookies: './cookies.txt'
+        cookies: './cookies.txt',
+        format: 'best/bestvideo+bestaudio'
     });
 
 
