@@ -34,7 +34,8 @@ async function getInfo(url) {
             noWarnings: true,
             noCheckCertificates: true,
             preferFreeFormats: true,
-            cookies: './yt_cookies.txt'
+            cookies: './yt_cookies.txt',
+            
         });
 
         const cleanFormats = summarizeFormats(info.formats);
