@@ -3,7 +3,6 @@ const youtubedl = require('youtube-dl-exec');
 function getFormattedType(f) {
     const hasVideo = f.vcodec && f.vcodec !== 'none';
     const hasAudio = f.acodec && f.acodec !== 'none';
-
     if (hasVideo && hasAudio) return 'both';
     if (hasVideo && !hasAudio) return 'video';
     if (!hasVideo && hasAudio) return 'audio';

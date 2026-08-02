@@ -7,7 +7,6 @@ const Main = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
   const handlefunctioncall = async () => {
     if (!initialValue.trim()) {
       setError("Please enter a URL first");
@@ -36,7 +35,6 @@ const Main = () => {
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 tracking-tight">
         Video Downloader
       </h1>
-
       {/* Input row */}
       <div className="w-full max-w-2xl flex flex-col sm:flex-row gap-3 mb-8">
         <input
@@ -60,7 +58,6 @@ const Main = () => {
           {error}
         </p>
       )}
-
       {/* Result card */}
       {data && (
         <div className="w-full max-w-2xl bg-slate-800 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
@@ -71,7 +68,6 @@ const Main = () => {
               alt={data.title || "video thumbnail"}
             />
           )}
-
           <div className="p-6">
             {data.title && (
               <h2 className="text-xl font-semibold text-white mb-2">
@@ -83,7 +79,6 @@ const Main = () => {
                 Duration: {(data.duration / 60).toFixed(2)} min
               </p>
             )}
-
             <FormatList formats={data.formats} />
           </div>
         </div>
