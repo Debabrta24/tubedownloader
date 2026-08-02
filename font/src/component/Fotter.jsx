@@ -13,7 +13,8 @@ const Footer = () => {
 
         <p className="flex items-center gap-1.5 text-sm sm:text-base text-slate-300">
           Made with
-          <i className="ti ti-heart-filled text-red-500 text-base"></i>
+          {/* <i className="ti ti-heart-filled text-red-500 text-base"></i> */}
+          ❤️
           for you
         </p>
       </div>
