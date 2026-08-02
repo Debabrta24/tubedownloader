@@ -1,24 +1,28 @@
-const Fotter = () => {
+const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-r from-green-600 via-emerald-500 to-green-700 text-white py-4 px-6 border-t border-green-400/30 shadow-2xl">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
-        <p className="text-sm sm:text-base font-medium tracking-wide transition-all duration-300 hover:tracking-widest">
+    <footer className="w-full bg-slate-900 text-white py-6 px-6 border-t border-slate-800">
+      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+        <p className="text-sm sm:text-base font-medium text-slate-300 tracking-wide">
           Created by{" "}
-          <span className="font-bold text-yellow-300 hover:text-yellow-200 transition-colors duration-300 cursor-pointer">
+          <span className="font-semibold text-red-400 hover:text-red-300 transition-colors duration-300 cursor-pointer">
             Debabrata Paul
           </span>
         </p>
 
-        <span className="hidden sm:block text-green-200">•</span>
+        <span className="hidden sm:block text-slate-600">•</span>
 
-        <p className="flex items-center gap-2 text-sm sm:text-base">
+        <p className="flex items-center gap-1.5 text-sm sm:text-base text-slate-300">
           Made with
-          <span className="text-red-400 animate-pulse text-lg">❤️</span>
-          for love
+          <i className="ti ti-heart-filled text-red-500 text-base"></i>
+          for you
         </p>
       </div>
+
+      <p className="text-center text-xs text-slate-500 mt-3">
+        © {new Date().getFullYear()} All Video Downloader. All rights reserved.
+      </p>
     </footer>
   );
 };
 
-export default Fotter;
+export default Footer;
