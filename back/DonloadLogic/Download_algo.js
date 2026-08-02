@@ -53,6 +53,7 @@ async function getInfo(url) {
     }
 
     catch (err) {
+        console.log(err.message)
         if (err.message.includes('This live event has ended')) {
             throw new Error('This live stream has ended and is no longer available.');
         }
