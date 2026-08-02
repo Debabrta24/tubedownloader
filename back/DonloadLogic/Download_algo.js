@@ -32,7 +32,8 @@ async function getInfo(url) {
         dumpSingleJson: true,
         noWarnings: true,
         noCheckCertificates: true,
-        preferFreeFormats: true
+        preferFreeFormats: true,
+        cookies: './cookies.txt'
     });
 
 

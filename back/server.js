@@ -1,4 +1,6 @@
 const express = require("express")
+require('dotenv').config();
+const fs = require('fs');     
 const cors = require("cors");
 const getInfo = require("./DonloadLogic/Download_algo");
 const app = express();
@@ -9,6 +11,15 @@ app.use(cors({
     origin: ["http://localhost:5173","https://atozdownloader.vercel.app/"],//only allowed origin
     methods: ['get']
 }))
+
+
+//creating cookies for youtube 
+
+if (process.env.YT_COOKIES_BASE64) {
+    const cookiesContent = Buffer.from(process.env.YT_COOKIES_BASE64, 'base64').toString('utf-8');
+    fs.writeFileSync('./cookies.txt', cookiesContent);
+    console.log('cookies.txt created successfully');
+}
 
 
 
