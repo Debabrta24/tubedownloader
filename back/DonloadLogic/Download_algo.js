@@ -21,7 +21,7 @@ function summarizeFormats(formats) {
         url: f.url,
         downloader_options: f.downloader_options,
         type: getFormattedType(f),
-        http_headers: f.http_headers,
+        // http_headers: f.http_headers,
         resolution: f.resolution || (f.width && f.height ? `${f.width}x${f.height}` : 'audio-only'),
         video_size: getSizeMB(f)
     }));
@@ -36,11 +36,12 @@ async function getInfo(url) {
         preferFreeFormats: true
     });
 
-    console.log('Title:', info.title);
-    console.log('Duration:', info.duration / 60);
+
     const cleanFormats = summarizeFormats(info.formats);
-    console.log('Formats:', cleanFormats);
-    console.log("thumbnail", info.thumbnail)
+    // console.log('Title:', info.title);
+    // console.log('Duration:', info.duration / 60);
+    // console.log('Formats:', cleanFormats);
+    // console.log("thumbnail", info.thumbnail)
 
     return {
         title: info.title,
@@ -50,6 +51,6 @@ async function getInfo(url) {
     };
 }
 
-// module.exports =getInfo;
+module.exports = getInfo;
 
-getInfo('https://www.facebook.com/share/v/1ES8rLmMPd/');
+// getInfo('https://www.facebook.com/share/v/1ES8rLmMPd/');
