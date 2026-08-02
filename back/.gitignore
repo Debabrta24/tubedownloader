@@ -1,4 +1,4 @@
 *node_modules/
 .env
 *.env
-cookies.txt
+*yt_cookies.txt

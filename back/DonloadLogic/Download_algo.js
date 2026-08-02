@@ -36,6 +36,20 @@ async function getInfo(url) {
             preferFreeFormats: true,
             cookies: './yt_cookies.txt'
         });
+
+        const cleanFormats = summarizeFormats(info.formats);
+        // console.log('Title:', info.title);
+        // console.log('Duration:', info.duration / 60);
+        // console.log('Formats:', cleanFormats);
+        // console.log("thumbnail", info.thumbnail)
+
+
+        return {
+            title: info.title,
+            duration: info.duration / 60,
+            formats: cleanFormats,
+            thumbnail: info.thumbnail
+        };
     }
 
     catch (err) {
@@ -53,18 +67,7 @@ async function getInfo(url) {
     // console.log('total formats found:', info.formats?.length);
 
 
-    const cleanFormats = summarizeFormats(info.formats);
-    // console.log('Title:', info.title);
-    // console.log('Duration:', info.duration / 60);
-    // console.log('Formats:', cleanFormats);
-    // console.log("thumbnail", info.thumbnail)
 
-    return {
-        title: info.title,
-        duration: info.duration / 60,
-        formats: cleanFormats,
-        thumbnail: info.thumbnail
-    };
 }
 
 module.exports = getInfo;
