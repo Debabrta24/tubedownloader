@@ -35,6 +35,7 @@ async function getInfo(url) {
             noCheckCertificates: true,
             preferFreeFormats: true,
             cookies: './yt_cookies.txt',
+            extractorArgs: 'youtube:player_client=android'
             
         });
 
