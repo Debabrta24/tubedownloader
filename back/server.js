@@ -22,6 +22,19 @@ if (process.env.YT_COOKIES_BASE64) {
 }
 
 
+app.get('/debug-cookies', (req, res) => {
+    try {
+        const content = fs.readFileSync('./yt_cookies.txt', 'utf-8');
+        res.json({
+            length: content.length,
+            firstLine: content.split('\n')[0],
+            lineCount: content.split('\n').length
+        });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 
 app.get("/videourlget", async (req, res) => {
     const url = req.query.url;
