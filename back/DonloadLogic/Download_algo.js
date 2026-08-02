@@ -1,5 +1,6 @@
 const youtubedl = require('youtube-dl-exec');
-
+const proxyUrl = `http://${process.env.PROXY_USER}:${process.env.PROXY_PASS}@${process.env.PROXY_HOST}:${process.env.PROXY_PORT}`;
+console.log(proxyUrl)
 function getFormattedType(f) {
     const hasVideo = f.vcodec && f.vcodec !== 'none';
     const hasAudio = f.acodec && f.acodec !== 'none';
@@ -35,7 +36,7 @@ async function getInfo(url) {
             noCheckCertificates: true,
             preferFreeFormats: true,
             cookies: './yt_cookies.txt',
-            extractorArgs: 'youtube:player_client=tv_simply'
+            proxy: proxyUrl
             
         });
 
