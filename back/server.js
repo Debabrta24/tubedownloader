@@ -8,7 +8,7 @@ app.use(express.json())
 
 
 app.use(cors({
-    origin: "https://atozdownloader.vercel.app/",//only allowed origin
+    origin: "https://atozdownloader.vercel.app",//only allowed origin
     methods: 'get'
 }))
 
