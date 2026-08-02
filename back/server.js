@@ -18,7 +18,7 @@ app.use(cors({
 if (process.env.YT_COOKIES_BASE64) {
     const cookiesContent = Buffer.from(process.env.YT_COOKIES_BASE64, 'base64').toString('utf-8');
     fs.writeFileSync('./yt_cookies.txt', cookiesContent);
-    console.log('cookies.txt created successfully');
+    console.log('yt_cookies.txt created successfully');
 }
 
 
