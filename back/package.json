@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "@distube/ytdl-core": "^4.16.12",
-    "axios": "^1.19.0",
     "express": "^5.2.1",
     "fs": "^0.0.1-security",
     "init": "^0.1.2",
