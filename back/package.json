@@ -1,10 +1,13 @@
 {
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "node_modules/youtube-dl-exec/bin/yt-dlp -U || true"
+  },
   "dependencies": {
     "@distube/ytdl-core": "^4.16.12",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "fs": "^0.0.1-security",
     "init": "^0.1.2",
     "nodemon": "^3.1.14",
     "progress-estimator": "^0.3.1",
