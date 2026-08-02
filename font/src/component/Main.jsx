@@ -22,6 +22,7 @@ const Main = () => {
         `https://tubedownloader-vclm.onrender.com/videourlget?url=${encodeURIComponent(initialValue)}`
       );
       setData(response.data);
+      console.log(response.data)
     } catch (err) {
       console.error(err);
       setError("Failed to fetch video info. Check the URL and try again.");
